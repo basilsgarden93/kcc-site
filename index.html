@@ -5,56 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KCC Teams</title>
   <style>
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      height: 100%;
-      background: #111;
-      color: white;
       font-family: Arial, sans-serif;
-    }
-    .wrap {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
-    }
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: 0;
-    }
-    .loading {
-      position: absolute;
-      z-index: 2;
+      background: #f2f2f2;
+      color: #111;
       text-align: center;
-      font-size: 1.3rem;
-      opacity: 0.9;
     }
-    .hidden {
-      display: none;
+
+    .header-gif {
+      width: 100%;
+      display: block;
+      max-height: 320px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .video-wrap {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      background: #000;
+    }
+
+    .video-wrap iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
+
+    footer {
+      padding: 18px 12px 28px;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div id="loading" class="loading">
-    <div>KCC Staff Portal</div>
-    <div>Loading team assignments...</div>
+  <img class="header-gif" src="header.gif" alt="Header GIF">
+
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/hvL1339luv0?autoplay=1&mute=1&rel=0"
+      title="April Fools Video"
+      allow="autoplay; fullscreen; encrypted-media"
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <iframe
-    id="video"
-    class="hidden"
-    src="https://www.youtube.com/embed/hvL1339luv0?autoplay=1&mute=1"
-    allow="autoplay; fullscreen">
-  </iframe>
-
-  <script>
-    setTimeout(() => {
-      document.getElementById("loading").classList.add("hidden");
-      document.getElementById("video").classList.remove("hidden");
-    }, 1500);
-  </script>
+  <footer>April fools!!!</footer>
 </body>
 </html>
